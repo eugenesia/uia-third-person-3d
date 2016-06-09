@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Ensure that player car has CharacterController component.
+[RequireComponent(typeof(CharacterController))]
+
 // Allow player character to move relative to screen, i.e.
 // "left" means move to left of screen/camera.
 public class RelativeMovement : MonoBehaviour {
@@ -12,9 +15,13 @@ public class RelativeMovement : MonoBehaviour {
 	// snap abruptly.
 	public float rotSpeed = 15.0f;
 
+	public float moveSpeed = 6.0f;
+
+	private CharacterController _charController;
+
 	// Use this for initialization
 	void Start () {
-	
+		_charController = GetComponent<CharacterController>();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +43,9 @@ public class RelativeMovement : MonoBehaviour {
 			movement.x = horInput;
 			movement.z = vertInput;
 
+			// Limit diagonal movement to the same speed as movement along an axis.
+			movement = Vector3.ClampMagnitude(movement, moveSpeed);
+
 			// Keep initial rotation to restore after finishing with target object.
 			Quaternion tmp = target.rotation;
 			target.eulerAngles = new Vector3(0, target.eulerAngles.y, 0);
@@ -52,5 +62,9 @@ public class RelativeMovement : MonoBehaviour {
 			transform.rotation = Quaternion.Lerp(transform.rotation,
 				direction, rotSpeed * Time.deltaTime);
 		}
+
+		// Multiply movement by deltaTime to make them frame rate-independent.
+		movement *= Time.deltaTime;
+		_charController.Move(movement);
 	}
 }
