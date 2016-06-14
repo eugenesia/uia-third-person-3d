@@ -19,8 +19,21 @@ public class RelativeMovement : MonoBehaviour {
 
 	private CharacterController _charController;
 
+	// Jumping-related properties.
+	public float jumpSpeed = 15.0f;
+	public float gravity = -9.8f;
+	public float terminalVelocity = -10.0f;
+	public float minFall = -1.5f;
+
+	private float _vertSpeed;
+
+
 	// Use this for initialization
 	void Start () {
+		// Initialize vertical speed to min falling speed at start.
+		// Keeps char pressed down and so it can run up and down on uneven terrain.
+		_vertSpeed = minFall;
+
 		_charController = GetComponent<CharacterController>();
 	}
 	
@@ -62,6 +75,28 @@ public class RelativeMovement : MonoBehaviour {
 			transform.rotation = Quaternion.Lerp(transform.rotation,
 				direction, rotSpeed * Time.deltaTime);
 		}
+
+
+		// Handle jumps.
+
+		// Check if char is on ground.
+		if (_charController.isGrounded) {
+			// React to jump button only while on ground.
+			if (Input.GetButtonDown("Jump")) {
+				_vertSpeed = jumpSpeed;
+			}
+			else {
+				_vertSpeed = minFall;
+			}
+		}
+		else {
+			// If not on ground, apply gravity until terminal velocity reached.
+			_vertSpeed += gravity * 5 * Time.deltaTime;
+			if (_vertSpeed < terminalVelocity) {
+				_vertSpeed = terminalVelocity;
+			}
+		}
+		movement.y = _vertSpeed;
 
 		// Multiply movement by deltaTime to make them frame rate-independent.
 		movement *= Time.deltaTime;
