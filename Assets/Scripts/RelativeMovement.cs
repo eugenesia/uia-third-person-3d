@@ -27,6 +27,9 @@ public class RelativeMovement : MonoBehaviour {
 
 	private float _vertSpeed;
 
+	// Store collision data between functions.
+	private ControllerColliderHit _contact;
+
 
 	// Use this for initialization
 	void Start () {
@@ -76,11 +79,36 @@ public class RelativeMovement : MonoBehaviour {
 				direction, rotSpeed * Time.deltaTime);
 		}
 
+		// Use raycasting to detect if ground is touching character's feet,
+		// as CharacterCollider is inaccurate for sloping ground.
+		bool hitGround = false;
+
+		RaycastHit hit;
+
+		// Check if player is falling.
+		if (_vertSpeed < 0 &&
+			Physics.Raycast(transform.position, Vector3.down, out hit)) {
+
+			// Distance to check against (extend slightly beyond bottom of capsule).
+			//
+			// The next several lines do raycasting. This code also goes below horizontal
+			// movement but before the if statement for vertical movement. The actual
+			// Physics.Raycast() call should be familiar from previous chapters, but the
+			// specific parameters are different this time. Although the position to cast
+			// a ray from is the same (the character’s position), the direction will be
+			// down this time instead of forward. Then we check how far away the raycast
+			// was when it hit something; if the distance of the hit is at the distance
+			// of the character’s feet, then the character is standing on the ground, so
+			// set hitGround to true.
+			float check = (_charController.height + _charController.radius) / 1.9f;
+			hitGround = hit.distance <= check;
+		}
+
 
 		// Handle jumps.
 
 		// Check if char is on ground.
-		if (_charController.isGrounded) {
+		if (hitGround) {
 			// React to jump button only while on ground.
 			if (Input.GetButtonDown("Jump")) {
 				_vertSpeed = jumpSpeed;
@@ -95,11 +123,35 @@ public class RelativeMovement : MonoBehaviour {
 			if (_vertSpeed < terminalVelocity) {
 				_vertSpeed = terminalVelocity;
 			}
+
+			// Raycasting didn't detect ground, but capsule is touching ground.
+			// E.g. when player walks off edge of platform.
+			if (_charController.isGrounded) {
+
+				// Respond slightly differently depending on whether character is
+				// facing the contact point.
+				//
+				// Char not facing contact point. 
+				if (Vector3.Dot(movement, _contact.normal) < 0) {
+					// Replace movement to repel char away from contact point, and
+					// so char won't keep moving in wrong direction.
+					movement = _contact.normal * moveSpeed;
+				}
+				else {
+					// Keep forward momentum away from edge.
+					movement += _contact.normal * moveSpeed;
+				}
+			}
 		}
 		movement.y = _vertSpeed;
 
 		// Multiply movement by deltaTime to make them frame rate-independent.
 		movement *= Time.deltaTime;
 		_charController.Move(movement);
+	}
+
+	// Store collision data in callback when collision detected.
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		_contact = hit;
 	}
 }
