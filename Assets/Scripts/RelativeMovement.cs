@@ -30,6 +30,8 @@ public class RelativeMovement : MonoBehaviour {
 	// Store collision data between functions.
 	private ControllerColliderHit _contact;
 
+	private Animator _animator;
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +40,8 @@ public class RelativeMovement : MonoBehaviour {
 		_vertSpeed = minFall;
 
 		_charController = GetComponent<CharacterController>();
+
+		_animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -104,6 +108,7 @@ public class RelativeMovement : MonoBehaviour {
 			hitGround = hit.distance <= check;
 		}
 
+		_animator.SetFloat("Speed", movement.sqrMagnitude);
 
 		// Handle jumps.
 
@@ -114,7 +119,10 @@ public class RelativeMovement : MonoBehaviour {
 				_vertSpeed = jumpSpeed;
 			}
 			else {
-				_vertSpeed = minFall;
+				_vertSpeed = -0.1f;
+				// _vertSpeed = minFall;
+
+				_animator.SetBool("Jumping", false);
 			}
 		}
 		else {
@@ -122,6 +130,13 @@ public class RelativeMovement : MonoBehaviour {
 			_vertSpeed += gravity * 5 * Time.deltaTime;
 			if (_vertSpeed < terminalVelocity) {
 				_vertSpeed = terminalVelocity;
+			}
+
+			// Prevent animator from playing jump animation right from the start.
+			// The char falls down to the ground for a split second, don't need to play
+			// animation.
+			if (_contact != null) {
+				_animator.SetBool("Jumping", true);
 			}
 
 			// Raycasting didn't detect ground, but capsule is touching ground.
