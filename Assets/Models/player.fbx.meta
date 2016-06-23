@@ -84,6 +84,9 @@ ModelImporter:
     4300000: body
     7400000: Take 001
     7400002: idle
+    7400004: walk
+    7400006: run
+    7400008: jump
     9500000: //RootNode
     13700000: body
   materials:
@@ -231,7 +234,319 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 0
+      - path: pelvis
+        weight: 1
+      - path: pelvis/lhip
+        weight: 1
+      - path: pelvis/lhip/lknee
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle/lfoot
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle/lfoot/ltoe
+        weight: 1
+      - path: pelvis/rhip
+        weight: 1
+      - path: pelvis/rhip/rknee
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle/rfoot
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle/rfoot/rtoe
+        weight: 1
+      - path: pelvis/spine1
+        weight: 1
+      - path: pelvis/spine1/spine2
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers/lknuckle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers/lknuckle/lfingertips
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lthumb
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lthumb/lthumbtip
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck/head
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck/head/jaw
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers/rknuckle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers/rknuckle/rfingertip
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rthumb
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rthumb/rthumbtip
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 142
+      lastFrame: 169
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 0
+      - path: pelvis
+        weight: 1
+      - path: pelvis/lhip
+        weight: 1
+      - path: pelvis/lhip/lknee
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle/lfoot
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle/lfoot/ltoe
+        weight: 1
+      - path: pelvis/rhip
+        weight: 1
+      - path: pelvis/rhip/rknee
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle/rfoot
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle/rfoot/rtoe
+        weight: 1
+      - path: pelvis/spine1
+        weight: 1
+      - path: pelvis/spine1/spine2
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers/lknuckle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers/lknuckle/lfingertips
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lthumb
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lthumb/lthumbtip
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck/head
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck/head/jaw
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers/rknuckle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers/rknuckle/rfingertip
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rthumb
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rthumb/rthumbtip
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 171
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 0
+      - path: pelvis
+        weight: 1
+      - path: pelvis/lhip
+        weight: 1
+      - path: pelvis/lhip/lknee
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle/lfoot
+        weight: 1
+      - path: pelvis/lhip/lknee/lankle/lfoot/ltoe
+        weight: 1
+      - path: pelvis/rhip
+        weight: 1
+      - path: pelvis/rhip/rknee
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle/rfoot
+        weight: 1
+      - path: pelvis/rhip/rknee/rankle/rfoot/rtoe
+        weight: 1
+      - path: pelvis/spine1
+        weight: 1
+      - path: pelvis/spine1/spine2
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers/lknuckle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lfingers/lknuckle/lfingertips
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lthumb
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/lclavicle/lshoulder/lelbow/lwrist/lthumb/lthumbtip
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck/head
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/neck/head/jaw
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers/rknuckle
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rfingers/rknuckle/rfingertip
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rthumb
+        weight: 1
+      - path: pelvis/spine1/spine2/spine3/spine4/rclavicle/rshoulder/relbow/rwrist/rthumb/rthumbtip
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 190.5
+      lastFrame: 191
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
